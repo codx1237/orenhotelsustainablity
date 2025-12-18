@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oren Hotel | Politika ve Talimat Belgeleri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f9f7;
+            color: #2d3e2f;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e4620, #2e7d32);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: #c8e6c9;
+        }
+
+        .hotel-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* MOBİL MENÜ */
+        .mobile-menu-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            z-index: 1001;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            background-color: #388e3c;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            background-color: #2e7d32;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .document-section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .section-header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .document-code {
+            background-color: rgba(255,255,255,0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            text-align: right;
+        }
+
+        .document-content {
+            padding: 1.5rem;
+        }
+
+        .policy-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e8f5e9;
+        }
+
+        .policy-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .policy-item h3 {
+            color: #2e7d32;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .policy-content {
+            background-color: #f9fdf8;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #81c784;
+            margin-top: 0.5rem;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .bullet-list li:before {
+            content: "➢";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .guidelines-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .guideline-box {
+            background-color: #f1f8e9;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+        }
+
+        .guideline-box h4 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stakeholder-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .stakeholder-table th {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #c8e6c9;
+        }
+
+        .stakeholder-table td {
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stakeholder-table tr:nth-child(even) {
+            background-color: #f9fdf8;
+        }
+
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .risk-table th, .risk-table td {
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .risk-table th {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .risk-table tr:nth-child(even) {
+            background-color: #f9fdf8;
+        }
+
+        .page-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f1f8e9;
+            padding: 0.8rem 1.2rem;
+            border-top: 1px solid #c8e6c9;
+            font-size: 0.85rem;
+            color: #555;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background-color: #1e4620;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* TABLET GÖRÜNÜM */
+        @media (max-width: 992px) {
+            .hotel-name {
+                font-size: 1.6rem;
+            }
+            
+            .logo-icon {
+                font-size: 2rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .document-code {
+                align-self: flex-start;
+            }
+            
+            .stakeholder-table {
+                font-size: 0.85rem;
+            }
+            
+            .risk-table {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* MOBİL GÖRÜNÜM */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            
+            .nav-links.active {
+                max-height: 500px;
+                padding: 0.5rem 0;
+            }
+            
+            .nav-link {
+                padding: 0.8rem 1.5rem;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+                margin: 1.5rem auto;
+            }
+            
+            .document-content {
+                padding: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.2rem;
+                min-width: 100%;
+            }
+            
+            .document-code {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .guidelines-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stakeholder-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .risk-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .policy-content {
+                padding: 0.8rem;
+            }
+            
+            .bullet-list li {
+                padding-left: 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .page-info {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .hotel-name {
+                font-size: 1.4rem;
+            }
+            
+            .logo-icon {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* KÜÇÜK MOBİL GÖRÜNÜM */
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0.8rem;
+            }
+            
+            .hotel-name {
+                font-size: 1.2rem;
+            }
+            
+            .logo-icon {
+                font-size: 1.5rem;
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .document-code {
+                font-size: 0.75rem;
+            }
+            
+            .policy-item h3 {
+                font-size: 1rem;
+            }
+            
+            .bullet-list li {
+                font-size: 0.9rem;
+            }
+            
+            .mobile-menu-btn {
+                top: 1rem;
+                right: 0.8rem;
+                font-size: 1.3rem;
+            }
+            
+            .footer {
+                padding: 1.5rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="logo-container">
+            <i class="fas fa-hotel logo-icon"></i>
+            <h1 class="hotel-name">OREN HOTEL</h1>
+        </div>
+        <p class="subtitle">Politika ve Talimat Belgeleri - Tüm içerik belgelerdeki orijinal metinlere dayanmaktadır</p>
+    </header>
+
+    <div class="nav-container">
+        <nav class="nav-links" id="navLinks">
+            <a href="#sosyal" class="nav-link"><i class="fas fa-users"></i> Sosyal Sürdürülebilirlik</a>
+            <a href="#kulturel-davranis" class="nav-link"><i class="fas fa-landmark"></i> Kültürel Davranış Kuralları</a>
+            <a href="#cevresel" class="nav-link"><i class="fas fa-leaf"></i> Çevresel Sürdürülebilirlik</a>
+            <a href="#genel-davranis" class="nav-link"><i class="fas fa-info-circle"></i> Genel Davranış Kuralları</a>
+            <a href="#paydas" class="nav-link"><i class="fas fa-handshake"></i> Paydaşlarla İletişim</a>
+            <a href="#insan-haklari" class="nav-link"><i class="fas fa-user-friends"></i> İnsan Hakları</a>
+            <a href="#risk" class="nav-link"><i class="fas fa-exclamation-triangle"></i> Risk ve Kriz Yönetimi</a>
+            <a href="#kulturel" class="nav-link"><i class="fas fa-monument"></i> Kültürel Sürdürülebilirlik</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <!-- SOSYAL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ -->
+        <div id="sosyal" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-users"></i> SOSYAL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ POLİTİKALARI</h2>
+                <div class="document-code">Sayfa 1 / 1 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <div class="policy-item">
+                    <h3><i class="fas fa-balance-scale"></i> Çalışan Hakları ve Adalet</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Çalışanlarımızın haklarına saygı gösterir ve adil iş uygulamalarını destekleriz.</li>
+                            <li>Eşit fırsatlar, adil ücret politikaları ve iş sağlığı güvenliği konularında en yüksek standartları benimseriz.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-chart-line"></i> Çalışan Gelişimi</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Çalışanlarımızın kişisel ve profesyonel gelişimini destekleyerek, onların kariyerlerini ilerletmelerine olanak tanırız.</li>
+                            <li>Eğitim programları ve içsel yükselme fırsatları ile çalışanlarımızın potansiyelini maksimum düzeyde kullanmalarına yardımcı oluruz.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-hands-helping"></i> Toplumsal Katılım</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Yerel topluluklarımıza karşı sorumluluklarımızın bilincindeyiz.</li>
+                            <li>Sosyal projelere katılım, yerel kalkınma projelerine destek ve topluluk ihtiyaçlarına duyarlılık gösterme konularında etkin bir rol alırız.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-smile"></i> Müşteri Memnuniyeti</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Misafir memnuniyetini en üst düzeye çıkarmayı hedefleriz.</li>
+                            <li>Misafirlerimizin beklentilerini anlamak ve onlara en iyi hizmeti sunmak için sürekli çaba gösteririz.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-hard-hat"></i> İş Sağlığı ve Güvenliği</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Çalışan sağlığı ve güvenliği en yüksek önceliklerimizden biridir.</li>
+                            <li>İş yerlerimizde güvenli çalışma koşullarını sağlamak, düzenli olarak güvenlik eğitimleri düzenlemek ve acil durum planları oluşturmak için gereken önlemleri alırız.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-globe-americas"></i> Kültürel Çeşitlilik</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Farklı kültürlerden gelen çalışanları destekler ve saygı gösteririz.</li>
+                            <li>Çeşitli ve kapsayıcı bir iş ortamı oluşturarak, herkesin katkıda bulunabileceği bir atmosfer yaratırız.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>POL.02 - SOSYAL SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ</div>
+                <div>Sayfa 1 / 1</div>
+            </div>
+        </div>
+
+        <!-- Diğer belge bölümleri burada devam ediyor -->
+        <!-- Kısalık için burada diğer bölümleri kısaltıyorum, ancak orijinal kodda tüm içerik mevcut -->
+        
+         <!-- KÜLTÜREL ALANLARDA DAVRANIŞ KURALLARI -->
+        <div id="kulturel-davranis" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-landmark"></i> KÜLTÜREL ALANLARDA DAVRANIŞ KURALLARI</h2>
+                <div class="document-code">FR.15 | Sayfa 1-2 / 2 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <p>İstanbul, zengin bir kültürel ve doğal mirasa sahip bir şehirdir. Bu mirasın korunması ve gelecek nesillere aktarılması için ziyaretçilerin bazı hususlara dikkat etmesi gerekmektedir.</p>
+                
+                <div class="guidelines-container">
+                    <div class="guideline-box">
+                        <h4><i class="fas fa-university"></i> Kültürel Alanlarda Davranış Kuralları</h4>
+                        <ul class="bullet-list">
+                            <li>Müze ve tarihi yapılarda sessiz olun ve diğer ziyaretçileri rahatsız etmeyin.</li>
+                            <li>Fotoğraf ve video çekerken diğer ziyaretçilerin mahremiyetini ihlal etmeyin.</li>
+                            <li>Müze ve tarihi yapılarda dokunulması yasak olan eşyalara dokunmayın.</li>
+                            <li>Müze ve tarihi yapılarda sigara içmeyin ve yemek yemeyin.</li>
+                            <li>Müze ve tarihi yapılarda çöp bırakmayın.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guideline-box">
+                        <h4><i class="fas fa-tree"></i> Doğal Alanlarda Davranış Kuralları</h4>
+                        <ul class="bullet-list">
+                            <li>Doğal alanları korumaya yardımcı olun.</li>
+                            <li>Bitki ve hayvanlara zarar vermeyin.</li>
+                            <li>Çöplerinizi çöp kutularına atın.</li>
+                            <li>Ateş yakmayın.</li>
+                            <li>Sessiz olun ve diğer ziyaretçileri rahatsız etmeyin.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-content" style="margin-top: 1.5rem;">
+                    <h4>Kuralların Ayrıntılı Açıklamaları:</h4>
+                    <p><strong>Kültürel Alanlarda:</strong> Müze ve tarihi yapılarda, ziyaretçilerin sessiz olmasını ve diğer ziyaretçileri rahatsız etmesini önlemek için genellikle kurallar vardır. Bu kuralların amacı, ziyaretçilerin deneyimlerini en iyi şekilde yaşamalarına yardımcı olmaktır.</p>
+                    <p><strong>Fotoğraf ve Video:</strong> Müze ve tarihi yapılarda fotoğraf ve video çekmek genellikle izin verilir, ancak diğer ziyaretçilerin mahremiyetini ihlal etmemeye dikkat edin. Örneğin, insanların yüzlerini fotoğraflarken izin isteyin.</p>
+                    <p><strong>Dokunma Yasağı:</strong> Müze ve tarihi yapılarda, dokunulması yasak olan eşyalar genellikle işaretlenir. Bu eşyalara dokunmak, onları zarar görebilir veya yok edebilir.</p>
+                    <p><strong>Sigara ve Yemek:</strong> Müze ve tarihi yapılarda sigara içmek ve yemek yemek genellikle yasaktır. Bu kurallar, eşyaların zarar görmesini önlemek ve diğer ziyaretçileri rahatsız etmemek içindir.</p>
+                    <p><strong>Çöp:</strong> Müze ve tarihi yapılarda çöp bırakmak, diğer ziyaretçiler için hoş olmayan bir deneyim yaratabilir ve eşyaların zarar görmesine neden olabilir. Lütfen çöplerinizi çöp kutularına atın.</p>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>FR.15 - KÜLTÜREL ALANLARDA DAVRANIŞ KURALLARI</div>
+                <div>Sayfa 1-2 / 2</div>
+            </div>
+        </div>
+                <!-- ÇEVRESEL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ -->
+        <div id="cevresel" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-leaf"></i> ÇEVRESEL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ POLİTİKALARI</h2>
+                <div class="document-code">SYS.POL.01 | Sayfa 1-2 / 2 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <p>Allenizle iyi vakit geçirebileceğiniz ve güzel anılar biriktirebileceğiniz bu otelde size hizmet verirken, doğayı korumayı da göz ardı etmemekteyiz. Çevreyi korumak, en az kendimize olduğu kadar diğer canlılara da saygı göstermek ve yaşam haklarını savunmak adına benimsediğimiz çevre politikasını, güncel yasa ve uygulamalar çerçevesinde ve en önemlisi siz misafirlerimizin desteğiyle, hayata geçirebilmek yeğâne amacımızdır.</p>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-industry"></i> Çevresel Taahhütler</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Çevre kirlenmesine neden olabilecek etkenleri kontrol altında tutarak, çevreye vereceğimiz kirlilik ve zararı en aza indireceğiz.</li>
+                            <li>Enerji verimliliği konusunda sürekli iyileştirmeye odaklanarak, otelimizde kullanılan enerjiyi azaltmayı ve yenilenebilir enerji kaynaklarını kullanmayı taahhüt ederiz.</li>
+                            <li>Su, enerji ve tüm doğal kaynakları tasarruflu kullanmaya çalışırız. Bu hassasiyetimizi çalışanlarımız, misafirlerimiz, tedarikçilerimiz ile paylaşırız.</li>
+                            <li>Çevre yönetimi konusundaki performansımızı ölçer, bu verileri hedefler ile izler ve performansımızı geliştirmeye çalışırız.</li>
+                            <li>Çalışanlarımızı çevre konusunda eğitmeyi ve duyarlılıklarını artırmayı amaçlarız.</li>
+                            <li>Atık üretimini minimize etmeyi ve geri dönüşümü teşvik etmeyi hedefleriz. Atık yönetim süreçlerimizi gözden geçirir, çöpleri azaltmak için stratejiler geliştirir ve atıkların doğaya zarar vermesini önlemek için önlemler alırız.</li>
+                            <li>Su kaynaklarını korumak amacıyla su tasarrufu politikalarını benimseriz. Su kullanımını optimize eder, sızıntıları önler ve su tasarruflu teknolojileri uygularız.</li>
+                            <li>Misafirlerimize ve çalışanlarımıza çevre dostu seçenekleri sunarak çevresel bilinci artırmayı amaçlarız. Tedarikçilerimizden çevre dostu ürünleri tercih eder ve sürdürülebilirliği destekleyen uygulamaları teşvik ederiz.</li>
+                            <li>Otelimizin çevresindeki doğal alanları koruma ve sürdürülebilir turizmi destekleme taahhüdümüzü sürdürürüz. Yerel ekosistemlere zarar vermeden, doğal kaynakları sürdürülebilir bir şekilde kullanırız.</li>
+                            <li>Çalışanlarımızı çevresel konularda eğitir ve bilinçlendiririz. Onların katılımını teşvik eder, çevresel hedeflere ulaşmada birlikte çalışır ve çevresel sürdürülebilirlik kültürünü otelimizde yaygınlaştırırız.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-bolt"></i> Enerji Verimliliği</h3>
+                    <div class="policy-content">
+                        <p>Sürdürülebilirlikle ilgili en önemli adımlardan biri enerji verimliliğini sağlamaktır. Öncelikle Enerji kullanımı ölçülerek sorunlar belirlenmeli ve olası tasarruf alanları tespit edilmelidir. Düşük tüketimli ekipmanlar ve sistemler tercih edilmelidir. Otomasyon yönetimi ve izleme kaynakları kullanarak uzun vadeli iyileşme sağlanmalıdır. Bakım, gözetim ve izleme yoluyla enerji tasarrufları sürekli analiz edilmelidir. Dünyamızı olası tehlikelerden korumak için enerjimizi verimli kullanıyor ve enerji sarfiyatımızı azaltmak için hedefler belirliyoruz.</p>
+                        <p>Ören Hotel olarak enerji kaynaklarının tükenmesinin getirdiği olumsuzlukların, küresel ısınmanın ve fosil yakıtların çevreye verdiği zararın farkındayız. Yenilenebilir enerji kaynaklarını tercih ettik ve doğadaki karbon ayak izimizi azaltmak için çaba gösterdik.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-clipboard-list"></i> Planlanan Çevresel Unsurlar</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Güneş enerjisinden daha fazla faydalanmak için Güneş enerjisi üzerinde yapılabilecek uygun çalışmaları araştırma.</li>
+                            <li>Enerji ve su tüketim oranını düşürmek için personelimizin bilinçlendirilmesi adına yıllık eğitim planında sürekli yer vermek.</li>
+                            <li>Çevre dostu ve enerji verimliliği yüksek makine ekipman ve tüketim malzemeler almak ve bunun devamlılığını sağlamak.</li>
+                            <li>Enerji kullanımımızda tesisimizde yapılacak yeni yatırım ve onarım faaliyetlerinde yenilenebilir enerji kaynaklarını projelerine dâhil etmek.</li>
+                            <li>Etkin atık yönetimi ve eğitimlerle atık azaltma ile geri dönüşümlü atıkların evsel atığa karışmasının engellenmek ve sıfır atık bilincine ulaşmak.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>SYS.POL.01 - ÇEVRESEL SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ</div>
+                <div>Sayfa 1-2 / 2</div>
+            </div>
+        </div>
+                <!-- GENEL DAVRANIŞ KURALLARI -->
+        <div id="genel-davranis" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-info-circle"></i> GENEL DAVRANIŞ KURALLARI</h2>
+                <div class="document-code">FR.14 | Sayfa 1-2 / 2 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <div class="policy-item">
+                    <h3><i class="fas fa-mosque"></i> Camiler</h3>
+                    <div class="policy-content">
+                        <p>Türkiye'de, gayrimüslimlerin camiye girmelerine izin verilmektedir. Dua edilen saatte ve İslam dininin en kutsal günü olan cuma gününde, bir camiyi ziyaret etmekten kaçınmalıdır. Bir camiye girmeden önce ayakkabılar çıkarılmalı ve giysilerle ilgili bazı kurallara dikkat edilmelidir. Örneğin kadınlar cami ziyaretlerinde baş, omuz ve bacaklarını kapatmalıdır. Erkeler; omuz ve bacaklarını kapatmalı, ziyarette pantolon tercih etmelidirler.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-bus"></i> Otobüs ve Tramvaylar</h3>
+                    <div class="policy-content">
+                        <p>Otobüs ve tramvaylar, ücret karşılığı bir yerden bir yere ulaşmak için kullanılan toplu taşınma araçlarıdır. Kamu otobüs ve tramvaylarına binişte ulaşım kartı alınabilir. Toplu taşıma araçlarına ön kapıdan binilir, arka kapıdan inilir.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-camera"></i> Çekimler ve Fotoğrafçılık</h3>
+                    <div class="policy-content">
+                        <p>Genel olarak, her yerde fotoğraf çekebilirsiniz. Birisi fotoğraflanmak istemiyorsa, bu dikkate alınmalıdır. Fotoğraf ve video çekimi, polis ve askeri tesislerde yasaktır.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-building"></i> Müzeler ve Açılış Saatleri</h3>
+                    <div class="policy-content">
+                        <p>Müzeler Türkiye genelinde pazartesi günleri kapalıdır. Genel olarak, 09:00-17:00 arası açıktır. Bazıları 12:00 - 13:30 arası öğle arası kapatmaktadır. Açık hava antik arkeolojik müzeler güneşin batışına kadar saat 09:00'dan itibaren ziyaret edilebilir.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-fish"></i> Sirkler ve Yunus Gösterileri</h3>
+                    <div class="policy-content">
+                        <p>Hayvan ihlalini engellemek için lütfen Yunus gösterilerine ve sirklere gitmeyiniz. Hiçbir canlı doğal ortamından alınıp eğlence amaçlı kullanılamaz ve bundan mutluluk duyamaz.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-history"></i> Antika</h3>
+                    <div class="policy-content">
+                        <p>Her türlü antika ihracatı yasaktır. Yasağın uygulanması dikkatle kontrol edilir. Küçük cam parçaları dâhil ciddi şekilde cezalandırılır. Mutlaka dikkat edilmeli. Antikalar, eski sikke, fosiller (buna deniz kabukları da dâhil) doğal taşlar vb. ihracat etmek kanunen yasaktır. Bunu dikkate almamak hapis ve para cezalarıyla sonlanır. Bu ceza bütün bulunan ve geniş anlamda bütün kültürel nesneler için geçerlidir.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-phone-alt"></i> Acil Durum</h3>
+                    <div class="policy-content">
+                        <p>Tarihi eserler ve müzelere karşı duyarlılığınızdan dolayı teşekkür eder, İstanbul'da bulunan müze ve tarihi alanları da ziyaret etmenizin tarihi ve kültürel değerlere katkı sağlayacağını hatırlatmak isteriz. Otel dışında olabilecek herhangi bir acil durum için Otelimizi veya Acil Servis 112'yi arayabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>FR.14 - GENEL DAVRANIŞ KURALLARI</div>
+                <div>Sayfa 1-2 / 2</div>
+            </div>
+        </div>
+
+        <!-- PAYDAŞLARLA İLETİŞİM -->
+        <div id="paydas" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-handshake"></i> PAYDAŞLARLA İLETİŞİM</h2>
+                <div class="document-code">TAB.02 | Sayfa 1 / 1 | Yayın Tarihi: 01.11.2025</div>
+            </div>
+            <div class="document-content">
+                <table class="stakeholder-table">
+                    <thead>
+                        <tr>
+                            <th>PAYDAŞ GRUBU</th>
+                            <th>DİYALOĞ PLATFORMU</th>
+                            <th>İLETİŞİM SIKLIĞI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">ÇALIŞANLAR</td>
+                            <td>Performans Değerlendirme Toplantıları</td>
+                            <td>Yılda 4 Kez</td>
+                        </tr>
+                        <tr>
+                            <td>Sosyal Etkinlikler</td>
+                            <td>Yılda En Az 2 Kez</td>
+                        </tr>
+                        <tr>
+                            <td>İş Sağlığı ve Güvenliği Toplantıları</td>
+                            <td>Aylık</td>
+                        </tr>
+                        <tr>
+                            <td>Memnuniyet Anketi</td>
+                            <td>Üç Ayda Bir</td>
+                        </tr>
+                        <tr>
+                            <td>Sürdürülebilir Değerlendirme Anketi</td>
+                            <td>Yılda 2 Kez</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="5">MİSAFİRLER</td>
+                            <td>Memnuniyet Anketi</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>E-Posta</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Dijital Mecralar</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Çağrı Merkezi</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Fuarlar</td>
+                            <td>Yılda Birkaç Kez</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="5">TEDARİKÇİLER</td>
+                            <td>Anketler</td>
+                            <td>Yılda Bir Kez</td>
+                        </tr>
+                        <tr>
+                            <td>Yüz Yüze Görüşmeler</td>
+                            <td>Talep Olduğunda</td>
+                        </tr>
+                        <tr>
+                            <td>E-Posta</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Dijital Mecralar</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Mesajlaşma Servisi</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="3">YEREL HALK</td>
+                            <td>Sosyal Projeler</td>
+                            <td>Proje Sürecinde</td>
+                        </tr>
+                        <tr>
+                            <td>Dijital Mecralar</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        <tr>
+                            <td>Sosyal Medya</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="3">SEKTÖREL KURULUŞLAR</td>
+                            <td>Üyelik Toplantıları</td>
+                            <td>Her Zaman</td>
+                        </tr>
+                        <tr>
+                            <td>Seminer ve Fuarlar</td>
+                            <td>Yılda Birkaç Kez</td>
+                        </tr>
+                        <tr>
+                            <td>Dijital Mecralar</td>
+                            <td>Sürekli</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="3">TOPLUM VE MEDYA</td>
+                            <td>Sosyal Sorumluluk Projeleri</td>
+                            <td>Proje Sürecinde</td>
+                        </tr>
+                        <tr>
+                            <td>Röportajlar</td>
+                            <td>İhtiyaç Duyulduğunda</td>
+                        </tr>
+                        <tr>
+                            <td>Dijital Mecralar</td>
+                            <td>Sürekli</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-info">
+                <div>TAB.02 - PAYDAŞLARLA İLETİŞİM</div>
+                <div>Sayfa 1 / 1</div>
+            </div>
+        </div>
+
+        <!-- İNSAN HAKLARI SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ -->
+        <div id="insan-haklari" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-user-friends"></i> İNSAN HAKLARI SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ POLİTİKALARI</h2>
+                <div class="document-code">POL.04 | Sayfa 1-3 / 3 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <p>Ören Hotel olarak, insan haklarına tam saygı göstermeyi ve bu hakların korunması için etkin bir şekilde çalışmayı benimsemekle birlikte aşağıda belirtilen prensiplere dayanan insan hakları sürdürülebilirlik politikamızdan şaşmayız.</p>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-balance-scale"></i> Temel İlkeler</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li><strong>Adil iş uygulamaları:</strong> Tüm çalışanlarına adil ve eşit iş uygulamaları sağlar. Irk, cins, cinsel yönelim, din, engellilik ve diğer özelliklere dayalı her türlü ayrımcılığı önleriz.</li>
+                            <li><strong>Çalışan hakları:</strong> Çalışan haklarına saygı gösterir, sendikal haklara saygı duyar ve iş güvenliği ile ilgili standartları uygularız. Çalışanlarımızın adil ücret, çalışma saatleri ve sosyal haklara erişimini destekleriz.</li>
+                            <li><strong>Müşteri gizliliği:</strong> Misafirlerimizin gizliliğine saygı gösterir ve kişisel bilgilerini güvenli bir şekilde koruruz. Bilgi güvenliği önlemlerini sürekli olarak günceller ve geliştiririz.</li>
+                            <li><strong>Yerel topluluklara saygı:</strong> Faaliyet gösterdiği yerel topluluklara saygı gösterir ve onların kültürüne, değerlerine ve ihtiyaçlarına duyarlılık gösterir. Topluluklarımızla işbirliği yapar ve onların kalkınmasına katkıda bulunmayı amaçlarız.</li>
+                            <li><strong>Tedarik zinciri uygulamaları:</strong> Tedarik zincirimizde insan haklarına saygı ve adil iş uygulamalarını teşvik ederiz. Tedarikçilerimizden bu değerlere uyan uygulamaları benimsemelerini bekler ve bu konuda işbirliği yaparız.</li>
+                            <li><strong>Eğitim ve farkındalık:</strong> Çalışanlarımızı insan hakları konusunda bilinçlendirir ve eğitiriz. İnsan haklarına uyum konusunda farkındalığı artırmak için sürekli eğitim programları düzenleriz.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-child"></i> Çocuk Hakları</h3>
+                    <div class="policy-content">
+                        <p>Çocuklar bize geleceğin emanetleridir. Onları bir birey olarak tanımak, haklarına saygı duymak, her türlü psikolojik, fiziksel, ticari vb. sömürüye karşı gözetmek ve korumak öncelikli sorumluluğumuzdur.</p>
+                        <p>Dünya Sağlık Örgütü çocuk istismarını şöyle tanımlar: "Çocuğun sağlığını, fiziksel ve psikososyal gelişimini olumsuz etkileyen, bir yetişkin, toplum ya da devlet tarafından bilerek ya da bilmeyerek uygulanan tüm davranışlar çocuğa kötü muameledir."</p>
+                        
+                        <p><strong>Bunu sağlamak için;</strong></p>
+                        <ul class="bullet-list">
+                            <li>Kendi kurumlarımızda çocuk işçi çalıştırılmasına müsaade etmez ve tüm iş ortaklarımızdan da aynı hassasiyeti bekleriz.</li>
+                            <li>Çocuk haklarının korunması konusunda farkındalık yaratmak için eğitimler düzenler ve ilgili projelere destek veririz.</li>
+                            <li>Çocuklar ile ilgili şüpheli eylemlere şahit olduğumuzda öncelikle otel yönetimine bilgi verir, gerekli görülen durumlarda resmi kuruluşlardan yardım isteriz.</li>
+                        </ul>
+                        
+                        <p><strong>Politikamız gereği;</strong></p>
+                        <ul class="bullet-list">
+                            <li>0-12 yaş altı küçük çocuklarınızı odanızda yalnız bırakmamanızı,</li>
+                            <li>Otelde yabancı kişilere çocuklarınızı teslim edip, otel dışına çıkmamanızı,</li>
+                            <li>18 yaş altı çocuklarınızın alkol kullanımına izin vermemenizi,</li>
+                            <li>Çocuk haklarına saygı göstermenizi,</li>
+                            <li>Çocuk ihmal ve istismarına yönelik davranışlarda bulunmamanızı,</li>
+                            <li>Çocuk haklarına ve istismarına yönelik aykırı davranışta bulunan kişileri yönetime bildirmenizi,</li>
+                        </ul>
+                        <p>Siz değerli misafirlerimizden ve çalışanlarımızdan rica ediyoruz.</p>
+                        <p>Bildirilen şikayetler doğrultusunda; güvenlik güçleri yönetim tarafından bilgilendirilecek ve gerekli yasal işlemlerin uygulanması sağlanacaktır.</p>
+                        <p>Çocuk haklarını korma konusunda ulusal ve uluslararası belirlenen kanunlar gereği çocuk istismarının cezai yaptırımı ve hapis cezası vardır.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-female"></i> Kadın Hakları Ve Cinsiyet Eşitliği</h3>
+                    <div class="policy-content">
+                        <p>Şirketimizde İnsan haklarının aslında kadın-erkek, eşit işe-eşit ücret olarak Bütün bireyleri kapsadığı bilincindeyiz. Kadınların Çalışma hakkı, Eşit eğitim hakkı, Sigortalı olma hakkı politikası ile hareket ederiz. Kadın Hakları eşitliği ve özgürlüğü temsil eden haklardır. Kadının en temel hakkı özgür olması ve erkekler ile eşit haklara sahip olmasıdır. Her kadın fikir ve düşüncelerini özgür bir şekilde ifade etme hakkına sahiptir.</p>
+                        <p>Bu hakların her çalışan kadın bireyimizin temel hakları olduğunun daima farkındayız ve kurumumuzda varlıklarını destekleriz.</p>
+                        
+                        <ul class="bullet-list">
+                            <li>Kadın haklarının en önemli koruyucuları yine kendileridir. Ve bunun için de haklarının ne olduğunu bilmeleri gerekmektedir. Buna istinaden; Eğitim politikaları oluşturur, kadınların katılımına ve farkındalığın artmasına destek oluruz.</li>
+                            <li>Kadın ve Erkekler eşit haklara sahiptir. Kurumumuz bu eşitliğin yaşama geçmesini sağlamakla yükümlü olduğunun bilincinde olup, Kadınların iş gücüne katılımını tüm departmanlarında desteklemektedir.</li>
+                            <li>Kadınların şirketimiz içerisinde fırsatları, kaynakları ve hizmetleri kullanma ve erişiminin önünde oluşabilecek engellere müsaade etmeyiz.</li>
+                            <li>Eşitlik ilkesi gözetilerek görev dağılımı yaparız.</li>
+                            <li>İş-aile yaşam dengesini koruyan çalışma ortamı ve uygulamalarını oluştururuz.</li>
+                            <li>Kadınların şirket yönetiminde olmaları için gerekli destekler sağlanır ve fırsatlar sunulur.</li>
+                            <li>Kadınların hiçbir şekilde istismar, taciz, ayrımcılık, zorlama, iftira vb. durumlara maruz kalmasına müsaade etmeyiz. Kadınların haklarının korunması ve kadına karşı şiddetin önlenmesi konusunda her daim kadınların yanında olmamız gerektiğinin bilincindeyiz. Cinsiyet eşitliğinin ideal olarak hayata geçirilmesi için şirketimiz tüm planlarında bu bilinçle hareket etmektedir.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>POL.04 - İNSAN HAKLARI SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ</div>
+                <div>Sayfa 1-3 / 3</div>
+            </div>
+        </div>
+
+        <!-- RİSK VE KRİZ YÖNETİMİ -->
+        <div id="risk" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> RİSK VE KRİZ YÖNETİMİ SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ POLİTİKALARI</h2>
+                <div class="document-code">SYS.POL.05 | Sayfa 1-5 / 5 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <p>Ören Hotel, çevresel, sosyal, kültürel, ekonomik, kalite, insan hakları, sağlık ve güvenlik konularını kapsayan bir risk ve kriz yönetimi politikası benimsemiştir. Bu politika, otelin faaliyetlerinin çevreye, topluma ve çalışanlara zarar vermesini önlemeyi amaçlamaktadır.</p>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-bullseye"></i> Politikanın Temel İlkeleri</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Otel, faaliyetlerinin çevresel etkilerini en aza indirecektir.</li>
+                            <li>Otel, topluma fayda sağlayacak faaliyetler yürütecektir.</li>
+                            <li>Otel, çalışanlarının insan haklarını koruyacaktır.</li>
+                            <li>Otel, çalışanlarının sağlığını ve güvenliğini sağlayacaktır.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-footsteps"></i> Uygulama Adımları</h3>
+                    <div class="policy-content">
+                        <ul class="bullet-list">
+                            <li>Otel, riskleri belirlemek için bir risk analizi yapacaktır.</li>
+                            <li>Otel, riskleri yönetmek için bir plan hazırlayacaktır.</li>
+                            <li>Otel, planı uygulamak için gerekli kaynakları tahsis edecektir.</li>
+                            <li>Otel, planı uygulamanın etkinliğini değerlendirecektir.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-tree"></i> Çevresel Riskler</h3>
+                    <div class="policy-content">
+                        <p>Otel, faaliyetlerinin çevresel etkilerini en aza indirmek için aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Enerji tasarrufu sağlayacaktır.</li>
+                            <li>Su tasarrufu sağlayacaktır.</li>
+                            <li>Atık yönetimini iyileştirecektir.</li>
+                            <li>Çevreye zararlı kimyasalların kullanımını azaltacaktır.</li>
+                            <li>Doğal kaynakları korumaya çalışacaktır.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-users"></i> Sosyal Riskler</h3>
+                    <div class="policy-content">
+                        <p>Otel, topluma fayda sağlayacak faaliyetler yürütecektir. Bu faaliyetler şunlardır:</p>
+                        <ul class="bullet-list">
+                            <li>Yerel halkı istihdam edecektir.</li>
+                            <li>Yerel ekonomiye katkı sağlayacaktır.</li>
+                            <li>Kültürel etkinliklere destek verecektir.</li>
+                            <li>Sosyal sorumluluk projelerine katılacaktır.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-landmark"></i> Kültürel Riskler</h3>
+                    <div class="policy-content">
+                        <p>Otel, yerel kültürün ve geleneklerin korunmasına katkı sağlayacaktır. Bu amaçla aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Yerel sanatçıları destekleyecektir.</li>
+                            <li>Yerel kültürel etkinliklere ev sahipliği yapacaktır.</li>
+                            <li>Yerel kültürel mirasa saygı gösterecektir.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-chart-line"></i> Ekonomik Riskler</h3>
+                    <div class="policy-content">
+                        <p>Otel, ekonomik açıdan sürdürülebilir bir işletme olmak için aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Maliyetlerini kontrol edecektir.</li>
+                            <li>Gelirlerini artıracaktır.</li>
+                            <li>Risklere karşı sigorta yaptıracaktır.</li>
+                            <li>Yatırımlar yapacaktır.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-medal"></i> Kalite Riskleri</h3>
+                    <div class="policy-content">
+                        <p>Otel, hizmet kalitesini artırmak için aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Çalışanlarının eğitim ve gelişimini destekleyecektir.</li>
+                            <li>Teknolojiyi kullanacaktır.</li>
+                            <li>Müşteri memnuniyetini ölçecektir.</li>
+                            <li>Müşteri geri bildirimlerini değerlendirecektir.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-user-shield"></i> İnsan Hakları Riskleri</h3>
+                    <div class="policy-content">
+                        <p>Otel, çalışanlarının insan haklarını koruyacaktır. Bu amaçla aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Çalışanların eşit muamele görmesini sağlayacaktır.</li>
+                            <li>Çalışanların çalışma koşullarını iyileştirecektir.</li>
+                            <li>Çalışanların sendikalaşma hakkını tanıyacaktır.</li>
+                            <li>Çalışanların ayrımcılığa uğramasını engelleyecektir.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-hard-hat"></i> Sağlık ve Güvenlik Riskleri</h3>
+                    <div class="policy-content">
+                        <p>Otel, çalışanlarının sağlığını ve güvenliğini sağlayacaktır. Bu amaçla aşağıdaki önlemleri alacaktır:</p>
+                        <ul class="bullet-list">
+                            <li>Çalışanları iş sağlığı ve güvenliği konusunda eğitecektir.</li>
+                            <li>İşyerini güvenli hale getirecektir.</li>
+                            <li>İş kazalarını ve meslek hastalıklarını önlemek için gerekli önlemleri alacaktır.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-table"></i> Risk Analiz Tablosu</h3>
+                    <div class="policy-content">
+                        <table class="risk-table">
+                            <thead>
+                                <tr>
+                                    <th>Risk</th>
+                                    <th>Olasılık</th>
+                                    <th>Etki</th>
+                                    <th>Toplam Risk Puanı</th>
+                                    <th>Risk Azaltma Önlemleri</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Doğal afet (deprem, sel, yangın)</td>
+                                    <td>Yüksek</td>
+                                    <td>Yüksek</td>
+                                    <td>10</td>
+                                    <td>Doğal afetlere karşı dayanıklı binalar inşa et, yangın söndürme sistemleri kur, su baskınlarını önlemek için drenaj sistemleri kur</td>
+                                </tr>
+                                <tr>
+                                    <td>Atık yönetimi</td>
+                                    <td>Orta</td>
+                                    <td>Orta</td>
+                                    <td>6</td>
+                                    <td>Atıkları kaynağında azalt, geri dönüştür, kompostla, atık bertaraf tesisleri kur</td>
+                                </tr>
+                                <tr>
+                                    <td>Su tasarrufu</td>
+                                    <td>Orta</td>
+                                    <td>Orta</td>
+                                    <td>6</td>
+                                    <td>Su tasarruflu cihazlar kullan, su sızıntılarını onar, su tasarrufu kampanyaları düzenle</td>
+                                </tr>
+                                <tr>
+                                    <td>Enerji tasarrufu</td>
+                                    <td>Orta</td>
+                                    <td>Orta</td>
+                                    <td>6</td>
+                                    <td>Enerji tasarruflu cihazlar kullan, aydınlatmayı kontrol et, ısı kaybını azalt</td>
+                                </tr>
+                                <tr>
+                                    <td>Çevreye zararlı kimyasalların kullanımı</td>
+                                    <td>Düşük</td>
+                                    <td>Yüksek</td>
+                                    <td>3</td>
+                                    <td>Çevreye zararlı kimyasalları kullanma, alternatif kimyasallar kullan</td>
+                                </tr>
+                                <tr>
+                                    <td>İş güvenliği</td>
+                                    <td>Yüksek</td>
+                                    <td>Yüksek</td>
+                                    <td>8</td>
+                                    <td>İşyerinde güvenli çalışma koşulları sağla, çalışanları iş sağlığı ve güvenliği konusunda eğit</td>
+                                </tr>
+                                <tr>
+                                    <td>İşçi hakları</td>
+                                    <td>Orta</td>
+                                    <td>Orta</td>
+                                    <td>6</td>
+                                    <td>Çalışanlara adil ücret öde, çalışanlara güvenli ve sağlıklı çalışma koşulları sağla, çalışanlara işyerinde ayrımcılık yapma</td>
+                                </tr>
+                                <tr>
+                                    <td>Müşteri memnuniyeti</td>
+                                    <td>Yüksek</td>
+                                    <td>Orta</td>
+                                    <td>6</td>
+                                    <td>Müşterilere yüksek kaliteli hizmet sun, müşteri şikayetlerini hızlı ve etkili bir şekilde çöz</td>
+                                </tr>
+                                <tr>
+                                    <td>Sosyal sorumluluk</td>
+                                    <td>Orta</td>
+                                    <td>Düşük</td>
+                                    <td>3</td>
+                                    <td>Yerel topluluklara destek ver, çevreye duyarlı bir işletme ol</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-chart-bar"></i> Sürekli İyileştirme</h3>
+                    <div class="policy-content">
+                        <p><strong>Riskler:</strong></p>
+                        <ul class="bullet-list">
+                            <li>Müşteri memnuniyetsizliği</li>
+                            <li>Çalışan memnuniyetsizliği</li>
+                            <li>Finansal kayıp</li>
+                            <li>Rekabet dezavantajı</li>
+                            <li>Yasal sorunlar</li>
+                        </ul>
+                        
+                        <p><strong>Fırsatlar:</strong></p>
+                        <ul class="bullet-list">
+                            <li>Müşteri sadakatinin artması</li>
+                            <li>Çalışan üretkenliğinin artması</li>
+                            <li>Kar marjının artması</li>
+                            <li>Pazar payının artması</li>
+                            <li>Yeni müşteriler kazanma</li>
+                        </ul>
+                        
+                        <p>Sürekli iyileştirme faaliyetleri, bu riskleri ve fırsatları azaltmaya veya ortadan kaldırmaya yardımcı olacaktır. Bu sayede Ören Hotel, daha rekabetçi bir konuma gelecektir.</p>
+                        
+                        <p><strong>Sürekli iyileştirme faaliyetleri, aşağıdakiler gibi çeşitli yöntemler kullanılarak gerçekleştirilebilir:</strong></p>
+                        <ul class="bullet-list">
+                            <li>Müşteri geri bildirimlerini toplamak</li>
+                            <li>Çalışanlarla anketler yapmak</li>
+                            <li>Prosesleri analiz etmek</li>
+                            <li>Verileri izlemek</li>
+                            <li>İyileştirme fırsatları tanımlamak</li>
+                            <li>İyileştirme planları geliştirmek</li>
+                            <li>İyileştirmeleri uygulamak</li>
+                            <li>İyileştirmeleri izlemek ve değerlendirmek</li>
+                        </ul>
+                        
+                        <p>Sürekli iyileştirme faaliyetleri, Ören Hotel'in performansını sürekli olarak iyileştirmesine yardımcı olacaktır. Bu sayede otel, müşterilerinin, çalışanlarının ve yatırımcılarının memnuniyetini artıracaktır.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>SYS.POL.05 - RİSK VE KRİZ YÖNETİMİ SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ</div>
+                <div>Sayfa 1-5 / 5</div>
+            </div>
+        </div>
+
+        <!-- KÜLTÜREL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ -->
+        <div id="kulturel" class="document-section">
+            <div class="section-header">
+                <h2><i class="fas fa-monument"></i> KÜLTÜREL SÜRDÜRÜLEBİLİRLİK YÖNETİM SİSTEMİ POLİTİKALARI</h2>
+                <div class="document-code">SYS.POL.03 | Sayfa 1 / 1 | Yayın Tarihi: 01.11.2025 | Revizyon No: 00</div>
+            </div>
+            <div class="document-content">
+                <p>Ören Hotel olarak 'Müşteri' değil 'misafir' zihniyetiyle misafirlerimizi Türk misafirperverliği ile karşılar, tatilleri boyunca tüm sorunlarıyla ilgileniriz.</p>
+                <p>Fark yaratabilmenin en önemli yolunun misafirlerimize kaliteli hizmetler sunarak yüksek seviyede misafir memnuniyeti sağlamaktan geçtiğinin bilincindeyiz.</p>
+                <p>Misafirlerimizin istekleri kaliteli bir hizmet sunabilmemiz için önemlidir.</p>
+                <p>Misafirlerden şikâyet aldığımız durumlarda, objektif, özenli ve dikkatli bir şekilde inceleyip çözüm odaklı davranırız.</p>
+                <p>Misafirlerimize özel tema geceleri sunarak hem kendi kültürümüzü tanıtıp hem de memnuniyetlerini en üst seviyede tutmaya çalışıyoruz.</p>
+                <p>Otelimiz, yerel halkının fikri mülkiyet haklarına saygı gösterir. Geleneksel ve çağdaş yerel kültürün otantik unsurları mutfağımızda, tasarımımızda, dekorasyonda değerlendirir.</p>
+                <p>Ören Hotel olarak kültürel mirasımızın korunması ve tanıtılması adına birçok iletişim kanalı ile yakınımızda bulunan yerleşim bölgeleri, tarihi güzellikler, zanaatlar ve arkeolojik kalıntıların bilgi erişimini sağlanmaktayız. Global anlamda bölgenin tanınması ve kalkınmasına katkı sağlıyoruz.</p>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-info-circle"></i> Misafir Bilgilendirmeleri</h3>
+                    <div class="policy-content">
+                        <p><strong>Ören Hotel misafirlerimize;</strong></p>
+                        <ul class="bullet-list">
+                            <li>Turistik ve tarihi yerlerden herhangi bir malzeme alınması ve alan dışına çıkarılması Türkiye Cumhuriyeti yasalarına aykırı olduğu için tarihi yerlerden herhangi bir tarihi nesneyi hatıra olarak bile almaması gerektiği,</li>
+                            <li>Tarihi yerlere çöp atılmaması gerektiği;</li>
+                            <li>Tarihi yerlerde ateş yakılmaması gerektiği;</li>
+                            <li>Herhangi bir tarihi objeye / yapıya tırmanılmaması veya tahrip edilmemesi gerektiği;</li>
+                            <li>Tarihi objelere/yapılara dokunulmaması gerektiği;</li>
+                            <li>Herhangi bir tarihi nesne ve yapının üzerinin boyanmaması, üzerine yazı yazmaması veya karalanmaması gerektiği;</li>
+                            <li>Büyük çantalar veya sırt çantaları ile dar ve kalabalık yerlerde dolaşmak, bir nesnenin düşmesine veya bir duvar resmini çizmesine veya mahvetmesine neden olabileceği hakkında bilgilendirme yapıyoruz.</li>
+                            <li>Misafirlerimizi turistik yerlerle ilgili ulaşım ve girişlerle ilgili bilgilendirmekteyiz.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="policy-item">
+                    <h3><i class="fas fa-store"></i> Tarihi Eserler ve Yerel Ürünler</h3>
+                    <div class="policy-content">
+                        <p>Otelimiz, tarihsel ve arkeolojik eserleri alıp satmaz, ticaretine aracılık etmez ve bunları sergilemez.</p>
+                        <p>Otelimiz yerel ürünlerin tanıtılması ve tüketimine öncelik vermektedir. Tüm faaliyetlerinde gastronomide sürdürülebilirliği sağlamak için yenilikçi ve yaratıcı uygulamalar ortaya koymaktadır.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-info">
+                <div>SYS.POL.03 - KÜLTÜREL SÜRDÜRÜLEBİLİR YÖNETİM SİSTEMİ</div>
+                <div>Sayfa 1 / 1</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>OREN HOTEL</h3>
+            <p>Tüm politika ve talimat belgeleri orijinal halleriyle sunulmuştur. Belgelerdeki tüm içerikler Ören Hotel'in resmi politikalarını yansıtmaktadır.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Yayın Tarihi: 01.12.2025</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Telefon: 0212 523 86 72</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>orenhotels@gmail.com</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">Acil durumlarda lütfen 112 Acil Servis'i veya otel resepsiyonunu arayınız.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">© 2025 Oren Hotel. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobil menü toggle fonksiyonu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Menü ikonunu değiştir
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Menü linklerine tıklanınca mobil menüyü kapat
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Mobil menüyü kapat
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                }
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Pencere boyutu değiştiğinde mobil menüyü kontrol et
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                // Büyük ekranda menü her zaman açık
+                navLinks.classList.add('active');
+                navLinks.style.maxHeight = 'none';
+            } else {
+                // Küçük ekranda menü kapalı
+                navLinks.classList.remove('active');
+                navLinks.style.maxHeight = '0';
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            }
+        });
+        
+        // Sayfa yüklendiğinde pencere boyutuna göre menüyü ayarla
+        window.addEventListener('load', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.add('active');
+                navLinks.style.maxHeight = 'none';
+            }
+            
+            // URL'de hash varsa ilgili bölüme kaydır
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 300);
+                }
+            }
+            
+            console.log("Ören Hotel Politika Portalı yüklendi. Mobil menü aktif.");
+        });
+        
+        // Ekran dışına tıklanınca mobil menüyü kapat
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnMenuBtn && window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
