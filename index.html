@@ -1343,98 +1343,105 @@
 
     <script>
         // Mobil menü toggle fonksiyonu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+// Prevent event bubbling to handle click events properly
+mobileMenuBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent the click from bubbling to document
+    e.preventDefault();
+    
+    navLinks.classList.toggle('active');
+    
+    // Menü ikonunu değiştir
+    const icon = this.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Menü linklerine tıklanınca mobil menüyü kapat
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
         
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            
-            // Menü ikonunu değiştir
-            const icon = this.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+        // Mobil menüyü kapat
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        }
         
-        // Menü linklerine tıklanınca mobil menüyü kapat
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Mobil menüyü kapat
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                }
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
             });
-        });
+        }
+    });
+});
+
+// Pencere boyutu değiştiğinde mobil menüyü kontrol et
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        // Büyük ekranda menü her zaman açık
+        navLinks.classList.add('active');
+        navLinks.style.maxHeight = 'none';
+    } else {
+        // Küçük ekranda menü kapalı
+        navLinks.classList.remove('active');
+        navLinks.style.maxHeight = '0';
+        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+    }
+});
+
+// Sayfa yüklendiğinde pencere boyutuna göre menüyü ayarla
+window.addEventListener('load', function() {
+    if (window.innerWidth > 768) {
+        navLinks.classList.add('active');
+        navLinks.style.maxHeight = 'none';
+    }
+    
+    // URL'de hash varsa ilgili bölüme kaydır
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
         
-        // Pencere boyutu değiştiğinde mobil menüyü kontrol et
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                // Büyük ekranda menü her zaman açık
-                navLinks.classList.add('active');
-                navLinks.style.maxHeight = 'none';
-            } else {
-                // Küçük ekranda menü kapalı
-                navLinks.classList.remove('active');
-                navLinks.style.maxHeight = '0';
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            }
-        });
-        
-        // Sayfa yüklendiğinde pencere boyutuna göre menüyü ayarla
-        window.addEventListener('load', function() {
-            if (window.innerWidth > 768) {
-                navLinks.classList.add('active');
-                navLinks.style.maxHeight = 'none';
-            }
-            
-            // URL'de hash varsa ilgili bölüme kaydır
-            if (window.location.hash) {
-                const targetId = window.location.hash.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }, 300);
-                }
-            }
-            
-            console.log("Ören Hotel Politika Portalı yüklendi. Mobil menü aktif.");
-        });
-        
-        // Ekran dışına tıklanınca mobil menüyü kapat
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = navLinks.contains(event.target);
-            const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
-            
-            if (!isClickInsideNav && !isClickOnMenuBtn && window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            }
-        });
+        if (targetElement) {
+            setTimeout(() => {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    }
+    
+    console.log("Ören Hotel Politika Portalı yüklendi. Mobil menü aktif.");
+});
+
+// Ekran dışına tıklanınca mobil menüyü kapat
+document.addEventListener('click', function(event) {
+    const isClickInsideNav = navLinks.contains(event.target);
+    const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+    
+    // Sadece mobil görünümde çalışsın
+    if (window.innerWidth > 768) return;
+    
+    if (!isClickInsideNav && !isClickOnMenuBtn) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+    }
+});
     </script>
 </body>
 </html>
